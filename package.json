@@ -1,0 +1,40 @@
+{
+  "name": "ai-commit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenjuin95/ai-commit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+	"ai-commit": "./dist/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/wenjuin95/ai-commit/issues"
+  },
+  "homepage": "https://github.com/wenjuin95/ai-commit#readme",
+  "dependencies": {
+    "@google/genai": "^2.32.0",
+    "@inquirer/prompts": "^8.7.5",
+    "commander": "^15.0.0",
+    "dotenv": "^18.0.9",
+    "simple-git": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
