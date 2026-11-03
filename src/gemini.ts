@@ -1,5 +1,6 @@
 // gemini api intergration
 import { GoogleGenAI } from "@google/genai";
+import { getGeminiModel } from "./config.js";
 
 /**
  * Generate a conventional commit message based on the provided Git diff
@@ -38,8 +39,9 @@ ${diff}
 `;
 
 	try {
+		const model = await getGeminiModel();
 		const response = await ai.models.generateContent({
-			model: "gemini-3.5-flash-lite",
+			model: model,
 			contents: prompt,
 		})
 

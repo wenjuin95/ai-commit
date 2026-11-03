@@ -5,9 +5,14 @@ import { checkGitRepository, getStagedChanges } from "./git.js";
 import { generateCommitMessage } from "./gemini.js";
 import { processCommitMessage } from "./prompt.js";
 import { executeCommit } from "./commit.js";
-import { getApiKey } from "./config.js";
+import { getApiKey, configureMenu } from "./config.js";
 
 async function main() {
+	if (process.argv[2] === "config") {
+		await configureMenu();
+		return;
+	}
+
 	const apiKey = await getApiKey();
 
 	console.log("Checking git repository...");
