@@ -1,4 +1,4 @@
-AI Commit Message Generator
+# AI Commit Message Generator
 
 # About
 AI Commit Message Generator is a CLI tool that uses AI API to automatically generate meaningful Git commit messages based on staged changes.
@@ -9,15 +9,11 @@ Instead of manually thinking of a commit message every time you make changes, de
 
 # Real-Life Problem
 Writing Git commit messages seems simple, but developers often face a few common problems:
-
 - **Unclear commit messages**: Developers sometimes write vague messages such as update, fix, or changes.
-
 - **Inconsistent formatting**: Different developers follow different commit message styles.
-
 - **Time-consuming**: Developers need to understand their changes and think of a suitable description before every commit.
-
 - **Forgetting what changed**: When working on multiple files, it can be difficult to summarize all the changes accurately.
-
+  
 These problems make Git history harder to understand, especially when working on larger projects or collaborating with other developers.
 
 ---
@@ -34,7 +30,7 @@ This helps developers maintain a cleaner and more consistent Git history while r
 ---
 
 # Feature
-- **AI-Powered Generation**: Uses Gemini API to analyze staged changes and generate commit messages.
+- **AI-Powered Generation**: Uses AI to analyze staged changes and generate commit messages.
 
 - **Conventional Commits**: Generates messages using types such as feat, fix, refactor, docs, and test.
 
@@ -159,6 +155,10 @@ If you ever want to remove the globally linked CLI from your system, run:
 npm unlink -g ai-commit
 ```
 
+## Note: This project is intended to simplify the Git commit workflow. AI-generated commit messages should always be reviewed before committing.
+
 ---
 
-# Note: This project is intended to simplify the Git commit workflow. AI-generated commit messages should always be reviewed before committing.
+## License
+Distributed under the MIT License. See [LICENSE](https://github.com/wenjuin95/ai-commit/blob/main/LICENSE) for more information.
+
