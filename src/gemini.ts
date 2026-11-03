@@ -25,6 +25,7 @@ following Conventional Commits.
 
 Rules:
 - Use Feat, Fix, Refactor, Docs, Test, or Chore.
+- first letter of the subject line should be capitalized.
 - Include a scope when appropriate.
 - Use imperative mood.
 - Keep the description concise.
