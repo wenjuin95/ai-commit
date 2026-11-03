@@ -13,7 +13,7 @@ Writing Git commit messages seems simple, but developers often face a few common
 - **Inconsistent formatting**: Different developers follow different commit message styles.
 - **Time-consuming**: Developers need to understand their changes and think of a suitable description before every commit.
 - **Forgetting what changed**: When working on multiple files, it can be difficult to summarize all the changes accurately.
-  
+
 These problems make Git history harder to understand, especially when working on larger projects or collaborating with other developers.
 
 ---
@@ -147,6 +147,14 @@ Once the AI generates a Conventional Commit message based on your diff, you will
 - Regenerate: Asks Gemini for a new message using the same diff.
 - Quit: Cancels the operation without committing.
 
+## EXTRA: API key and AI model configuration
+
+Change API Key or AI model
+
+```bash
+ai-commit config
+```
+
 ## EXTRA: Uninstalling
 
 If you ever want to remove the globally linked CLI from your system, run:
@@ -154,6 +162,7 @@ If you ever want to remove the globally linked CLI from your system, run:
 ```bash
 npm unlink -g ai-commit
 ```
+
 
 ## Note: This project is intended to simplify the Git commit workflow. AI-generated commit messages should always be reviewed before committing.
 
