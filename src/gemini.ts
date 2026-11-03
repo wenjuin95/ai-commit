@@ -24,7 +24,7 @@ Generate ONE concise Git commit message
 following Conventional Commits.
 
 Rules:
-- Use feat, fix, refactor, docs, test, or chore.
+- Use Feat, Fix, Refactor, Docs, Test, or Chore.
 - Include a scope when appropriate.
 - Use imperative mood.
 - Keep the description concise.
