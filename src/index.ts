@@ -5,12 +5,27 @@ import { checkGitRepository, getStagedChanges } from "./git.js";
 import { generateCommitMessage } from "./gemini.js";
 import { processCommitMessage } from "./prompt.js";
 import { executeCommit } from "./commit.js";
-import { getApiKey, configureMenu } from "./config.js";
+import { getApiKey, getGeminiModel, configureMenu } from "./config.js";
 
 async function main() {
 	if (process.argv[2] === "config") {
+		if (process.argv[3] === "--show") {
+			const apiKey = await getApiKey();
+			console.log("Current API key	:", apiKey);
+			const model = await getGeminiModel();
+			console.log("Current model	:", model);
+			process.exit(0);
+		}
+
 		await configureMenu();
 		return;
+	} else if (process.argv[2] === "--help" || process.argv[2] === "-h") {
+		console.log("Usage: ai-commit [config|--help|-h|--show]");
+		console.log("Commands:");
+		console.log("  config       Configure API key and ai model");
+		console.log("  --show       Show current configuration (API key and model)");
+		console.log("  --help, -h   Show this help message");
+		process.exit(0);
 	}
 
 	const apiKey = await getApiKey();
