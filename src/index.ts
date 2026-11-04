@@ -6,6 +6,7 @@ import { generateCommitMessage } from "./gemini.js";
 import { processCommitMessage } from "./prompt.js";
 import { executeCommit } from "./commit.js";
 import { getApiKey, getGeminiModel, configureMenu } from "./config.js";
+import { showModelUsage } from "./usage.js";
 
 async function main() {
 	if (process.argv[2] === "config") {
@@ -19,13 +20,18 @@ async function main() {
 
 		await configureMenu();
 		return;
+	} else if (process.argv[2] === "usage") {
+		const model = await getGeminiModel();
+		await showModelUsage(model);
+		return;
 	} else if (process.argv[2] === "--help" || process.argv[2] === "-h") {
 		console.log("Usage: ai-commit [config|--help|-h|--show]");
 		console.log("Commands:");
 		console.log("  config       Configure API key and ai model");
+		console.log("  usage        Show API usage statistics");
 		console.log("  --show       Show current configuration (API key and model)");
 		console.log("  --help, -h   Show this help message");
-		process.exit(0);
+		return;
 	}
 
 	const apiKey = await getApiKey();

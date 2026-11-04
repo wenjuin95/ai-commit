@@ -2,16 +2,11 @@ import os from "os";
 import path from "path";
 import fs from "fs/promises";
 import { password, select } from "@inquirer/prompts";
+import { AppConfig } from "./types.js";
 
 const CONFIG_DIR = path.join(os.homedir(), ".ai-commit");
 const CONFIG_FILE = path.join(CONFIG_DIR, ".ai-commit.json");
-
 const DEFAULT_MODEL = "gemini-3.5-flash-lite";
-
-interface AppConfig {
-	GEMINI_API_KEY?: string;
-	GEMINI_MODEL?: string;
-}
 
 async function readConfig(): Promise<AppConfig> {
 	try {
@@ -79,6 +74,7 @@ export async function configureModel(): Promise<void> {
 		choices: [
 			{ name: "Gemini 3.8 Flash", value: "gemini-3.8-flash" },
 			{ name: "Gemini 3.6 Flash", value: "gemini-3.6-flash" },
+			{ name: "Gemini 3.5 Flash Lite", value: "gemini-3.5-flash-lite" },
 			{ name: "Exit", value: "exit" }
 		]
 	});
@@ -94,6 +90,7 @@ export async function configureModel(): Promise<void> {
 	await saveConfig(config);
 
 	console.log(`\n✅ AI model updated to: ${newModel.trim()}\n`);
+	process.exit(0);
 }
 
 export async function configureApiKey(): Promise<void> {

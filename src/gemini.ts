@@ -1,6 +1,7 @@
 // gemini api intergration
 import { GoogleGenAI } from "@google/genai";
 import { getGeminiModel } from "./config.js";
+import { recordUsage } from "./usage.js";
 
 /**
  * Generate a conventional commit message based on the provided Git diff
@@ -44,6 +45,21 @@ ${diff}
 		const response = await ai.models.generateContent({
 			model: model,
 			contents: prompt,
+			config: {
+				maxOutputTokens: 256
+			}
+		})
+
+		const usage = response.usageMetadata;
+
+		await recordUsage({
+			date: new Date().toISOString(),
+			timestamp: Date.now(),
+			model,
+			inputTokens: usage?.promptTokenCount ?? 0,
+			outputTokens: usage?.candidatesTokenCount ?? 0,
+			thinkingTokens: usage?.thoughtsTokenCount ?? 0,
+			totalTokens: usage?.totalTokenCount ?? 0
 		})
 
 		const message = response.text;
