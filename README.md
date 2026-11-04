@@ -1,7 +1,7 @@
-# AI Commit Message Generator
+# AI Commit
 
 # About
-AI Commit Message Generator is a CLI tool that uses AI API to automatically generate meaningful Git commit messages based on staged changes.
+AI Commit is a CLI tool that uses AI API to automatically generate meaningful Git commit messages based on staged changes.
 
 Instead of manually thinking of a commit message every time you make changes, developers can let AI analyze their Git diff and suggest an appropriate message.
 
@@ -19,7 +19,7 @@ These problems make Git history harder to understand, especially when working on
 ---
 
 # How This Project Solves the Problem
-AI Commit Message Generator simplifies the commit process by using AI to analyze staged Git changes and generate relevant commit messages.
+AI Commit simplifies the commit process by using AI to analyze staged Git changes and generate relevant commit messages.
 
 It retrieves the staged Git diff, sends the changes to AI API, and generates a commit message following the Conventional Commits format.
 
