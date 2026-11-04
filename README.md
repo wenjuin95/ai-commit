@@ -42,6 +42,8 @@ This helps developers maintain a cleaner and more consistent Git history while r
 
 - **Automatic Git Commit**: Creates a Git commit after the user approves the generated message.
 
+- **API Usage Monitoring** – Track Gemini API requests, token consumption, and quota usage for your selected model to help manage API limits and avoid exceeding usage quotas
+
 ---
 
 # Workflow
@@ -153,6 +155,14 @@ Change API Key or AI model
 
 ```bash
 ai-commit config
+```
+
+## EXTRA: Summary
+
+Get the summary of how to use it
+
+```bash
+ai-commit --help/-h
 ```
 
 ## EXTRA: Uninstalling
